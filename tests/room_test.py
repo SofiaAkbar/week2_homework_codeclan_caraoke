@@ -12,3 +12,10 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_number(self):
         self.assertEqual(1, self.room.number)
+
+    def test_room_has_no_occupants(self):
+        self.assertEqual([], self.room.occupants)
+
+    def test_room_can_check_in_guest(self):
+        self.room.check_in_guest(self.guest)
+        self.assertIn(self.guest, self.room.occupants)
