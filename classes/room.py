@@ -1,2 +1,4 @@
 class Room:
-    pass
+    
+    def __init__(self, number):
+        self.number = number

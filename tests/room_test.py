@@ -4,4 +4,11 @@ from classes.room import Room
 from classes.song import Song
 
 class TestRoom(unittest.TestCase):
-    pass
+    
+    def setUp(self):
+        self.guest = Guest("Bob")
+        self.room = Room(1)
+        self.song = Song("Umbrella", "Rihanna", "Pop")
+
+    def test_room_has_number(self):
+        self.assertEqual(1, self.room.number)
