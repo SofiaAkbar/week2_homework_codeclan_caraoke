@@ -24,3 +24,10 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest)
         self.room.check_out_guest(self.guest)
         self.assertNotIn(self.guest, self.room.occupants)
+
+    def test_room_has_no_playing_song(self):
+        self.assertEqual(None, self.room.playing_song)
+
+    def test_room_can_play_song(self):
+        self.room.play_song(self.song)
+        self.assertEqual(self.song, self.room.playing_song)
